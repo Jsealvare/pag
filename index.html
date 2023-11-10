@@ -19,6 +19,7 @@
       flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea cuando no caben en la pantalla */
       justify-content: space-between; /* Distribuye el espacio horizontalmente entre los elementos */
     }
+
     /* Estilo para los cards */
     .card {
       margin: 5px; /* Agrega un margen entre los cards */
@@ -26,19 +27,12 @@
 	  padding: 16px;
 	  border-radius: 20px;
     }
-.encabezado{
-    background: #ecb690;
-    margin-top: -10px;
-    height: 60px;
-}
-	  
 	
   </style>
 </head>
 
 <body>
-
-  <div class="encabezado"><span><img src="icons8-carrito-de-compras-50.png" style="height: 60px"></span></div> <a href="carritodecompra.html"> Carrito de Compra </a>
+  <h1>Productos</h1> <a href="carritodecompra.html"> Carrito de Compra </a>
   <div class="contenedor"></div>
 
   <script>
@@ -56,9 +50,11 @@
         return [];
       }
     }
+
     document.addEventListener("DOMContentLoaded", async () => {
       const contenedor = document.querySelector(".contenedor");
       const products = await obtenerProductos();
+
       let productos = "";
       products.test.forEach((product) => {
 		localStorage.setItem(`product_${product.id}`, JSON.stringify(product));
@@ -73,6 +69,7 @@
           </div>
         `;
       });
+
       contenedor.innerHTML = productos; // Agrega el contenido al elemento con la clase "contenedor"
     });
   </script>
